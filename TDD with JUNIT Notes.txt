@@ -1,0 +1,93 @@
+TDD with JUNIT Notes
+
+TDD = Test Driven Development
+
+Example uses Business Flights, with passengers and other flight logic.
+(generic example)
+
+1. Check Functionality
+2. Write tests for initial code
+3. Measure code and try to improve it 
+
+add junit jupiter to the dependencies
+
+Testing can help you find bugs in execution paths that are not fully implemented
+or not there yet
+
+There is a VIP flight error example in the video, the mistake was found by testing 
+
+you can run mvn test from the command prompt to get a report 
+(install mvn commands to terminal for that)
+
+In the example, they use polymorphism over using conditional. 
+
+You can verify the functionality of code is the same when you make changes
+with previous tests in many situaitons as well. Refinement sometimes can be a 
+case by case basis. 
+
+New JUNIT 5 Features
+
+@Nested can be added to inner classes 
+
+@DisplayName and @Before each annotations
+
+@BeforeEach - can initialize objects before each test 
+
+Given When Then is the logical flow of the application and the approache we take
+with testing
+
+@DisplayName annotation allows us to communicate our tests in a natural language,
+so this makes it easier to understand for the reader of the one writing tests 
+
+In the example, they add removing passengers from premium flights. Another 
+conditional to object oriented code refinement example.
+
+When writing a new class 
+
+1. Write dummy code in new class
+2. Write tests to check functionality 
+3. Run tests, expect to fail 
+4. Effectively add code that implements new functionality 
+5. Run tests, expect them to pass 
+
+the TDD approach here really gives us a clear vision on where we need to add the 
+code 
+
+Next they write the tests to make sure to restrict 1 passenger to a flight, so 
+a passenger cannot board a flight multiple times 
+
+After, they write a test for giving a passenger bonus points (flyer miles) for 
+boarding flights 
+
+1. Write code 
+2. Write tests expecting to fail 
+3. Write better code 
+4. Write tests expecting to pass 
+
+this test driven design is shown once again 
+
+You can use the @Disabled annotation, to of course disable tests so that an 
+unneeded test won't go red on your reports
+
+Integration with Mockito
+
+Mock Objects are done to test the behavior of another object (simulated objects)
+
+JUnit 5 has an extension model for mockito 
+
+SUT - System Under Test
+
+DOC - Depended on Components 
+
+Uses for Mock objects - Object supplies non deterministic results, states difficult
+to create or reproduce, it is slow (like a databasse), does not exist, etc 
+
+They use the air conditioning functionality to test mock objects 
+
+Add mockito dependency and the MockitoExtension for jupiter 
+
+Databases are a time consuming activity, so for testing we often mock it instead of 
+using the actual database 
+
+@Mock annotation to be able to subsitute a dummy database 
+
